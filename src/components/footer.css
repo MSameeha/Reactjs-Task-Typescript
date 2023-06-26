@@ -1,0 +1,74 @@
+/* Styling for the fixed-footer class */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4d688b;
+  padding: 20px 0;
+}
+
+/* Styling for the container class */
+.container {
+  max-width: 960px;
+  margin: 0 120px;
+  padding: 0 20px;
+}
+
+/* Styling for the row class */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the col-left class */
+.col-left {
+  flex: 1;
+  margin-right: 100px;
+  justify-content: flex-start; 
+}
+
+/* Styling for the col-right class */
+.col-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 1300px;
+}
+
+/* Styling for the h2 tag inside col-left */
+.col-left h2 {
+  font-size: 24px;
+  color: white;
+}
+
+/* Styling for the social media icons */
+.social-media-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px
+}
+
+/* Styling for the foo-link class */
+.foo-link {
+  display: inline-block;
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Styling for the icon size */
+.foo-link svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Styling when hovering over the foo-link class */
+.foo-link:hover {
+  color: #007bff;
+}
+
+.copyright {
+  font-size: medium;
+  color: white;
+}

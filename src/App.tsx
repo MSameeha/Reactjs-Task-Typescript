@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+//custom components
+import { Navbar } from './components/Navbar';
+import Login from './components/Login';
+import { Footer } from './components/Footer';
+
+import ProtectedRoutes from "./services/ProtectedRoutes";
+
+const Home = () => {
+  return (
+    <>
+      <section className="hero-section">
+        <h1>Home Page</h1>
+      </section>
+    </>
+  );
+};
+
+const Dashboard = () => {
+  const staticUsersString = sessionStorage.getItem('staticUsers');
+  let staticUsers = [];
+        if(staticUsersString !== null) {
+          staticUsers = JSON.parse(staticUsersString);
+        }
+  return (
+    <>
+      <section className="hero-section">
+        <h1>Welcome to dashboard</h1>
+      </section>
+    </>
+  );
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element={[<Navbar page='home-page'/> , <Home/>]} />
+
+            <Route path = '/login' element={<ProtectedRoutes authenticatedUser="YES"/>}>
+              <Route path="/login" element={[<Navbar page="login-page"/>, <Login/>]}/>
+            </Route>
+
+            {/* Protected Routes */}
+            <Route path = '/dashboard' element={<ProtectedRoutes />} >
+              <Route path="/dashboard" element={[<Navbar page="dashboard-page"/>, <Dashboard />]}/>
+            </Route>
+
+          </Routes>
+        </Router>
+      </div>
+      
+      <Footer />
+      
     </div>
   );
 }
-
 export default App;

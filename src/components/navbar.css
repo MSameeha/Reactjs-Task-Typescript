@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* navbar style start  */
+
+.main-nav {
+  width: 100%;
+  height: 80px;
+  display: grid;
+  background-color: #4d688b;
+  grid-template-columns: 14rem 250fr 13fr 13fr 11rem;
+  padding: 0 10px 0 1px;
+  align-items: center;
+}
+
+.login-button {
+    color: rgb(110, 224, 228);
+    font-weight:700
+}
+
+.login-button-box {
+  color: #b8d7ff;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 2px solid #003366;
+  border-radius: 5px;
+}
+
+.login-button-box:hover {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  grid-column: 2/3;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-center {
+  padding-left: 625%;
+  padding-top: 8px;
+  text-align: center;
+  font-size: large;
+}
+
+.dashboard {
+  display: flex;
+  color: white;
+  font-weight: bolder;
+  margin-top: 15px;
+}
+
+.menu-link {
+  grid-column: 3/4;
+}
+
+.menu-link ul {
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social-media {
+  grid-column: 4/5;
+}
+
+.social-media ul {
+  height: 10rem;
+  display: grid;
+  grid-template-columns: 3fr repeat(3, 1fr);
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+
+.social-media ul li {
+  text-align: right;
+}
+
+.social-media ul li:first-child {
+  grid-column: 2/3;
+  font-size: 22px;
+}
+
+
+/* ----------- Grid part ends ----------------- */
+
+.logo h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+
+}
+
+.logo h2 span {
+  font-size: 3.5rem;
+}
+
+.menu-link ul li {
+  font-size: 1.8rem;
+}
+
+.menu-link ul li a {
+  text-transform: capitalize;
+  color: rgba(0, 0, 3, 0.8);
+  transition: 0.5s;
+}
+.menu-link ul li:hover > a {
+  transform-origin: left;
+  color: rgba(0, 0, 3, 1);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.social-media ul li {
+  font-size: 1.8rem;
+  color: #b5cbbb;
+}
+
+/*Avatar styling*/
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.avatar-image {
+  width: 40px; /* Adjust the size of the avatar image */
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px; /* Add spacing between the avatar and dropdown */
+}
+
+.avatar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 120px;
+  height: fit-content;
+  display: none;
+}
+
+.avatar:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* hero section   */
+
+.hero-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e1ecfa;
+  /* background-color: #f9f9f9; */
+  color: #333333
+}
+
+.hero-section p {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.hero-section h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* responsive css style  */
+@media (max-width: 1080px) {
+  .main-nav {
+    height: 70px;
+    grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
+  }
+
+  .logo,
+  .menu-link ul,
+  .social-media ul {
+    height: 8rem;
+  }
+}
+
+/* responsive css style  */
+@media (max-width: 998px) {
+  .main-nav {
+    height: 70px;
+    /* grid-template-columns: 2rem 2fr 3fr 2rem 2rem; */
+    grid-template-columns: 2rem 100fr 1fr 1fr 2rem;
+  }
+
+  .menu-link {
+    display: none;
+  }
+
+  .logo,
+  .social-media ul {
+    height: 7rem;
+  }
+
+  .mobile-menu-link {
+    grid-column: 2/4;
+    position: relative;
+    z-index: 99;
+  }
+
+  .mobile-menu-link {
+    background-color: white;
+    height: 20rem;
+    display: grid;
+    grid-column: 2/5;
+    align-items: center;
+    padding-left: 3rem;
+    transition: all 2s linear;
+    transform-origin: top;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .mobile-menu-link ul {
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .mobile-menu-link ul li:first-child {
+    transition-delay: 0.2s;
+  }
+
+  .social-media {
+    grid-row: 1/2;
+    grid-column: 3/5;
+    justify-items: end;
+    align-items: center;
+    transition: all 2s linear;
+    color: #b5cbbb;
+  }
+
+  .social-media .social-media-desktop {
+    height: 0;
+    display: none;
+    color: #b5cbbb;
+  }
+
+  .social-media {
+    height: 7rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    color: #b5cbbb;
+  }
+
+  .social-media .hamburger-menu {
+    display: block;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 798px) {
+  .main-nav {
+    height: 6rem;
+    grid-template-columns: 1rem 2fr 1fr 1fr 1rem;
+  }
+
+  .logo,
+  .social-media ul {
+    height: 6rem;
+    color: #b5cbbb;
+  }
+
+  .social-media {
+    height: 6rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    color: #b5cbbb;
+  }
+
+  .social-media .hamburger-menu {
+    display: block;
+    font-size: 2.5rem;
+    color: #b5cbbb;
+  }
+}
+
+@media (max-width: 520px) {
+  .main-nav {
+    height: 55px;
+    grid-template-columns: 1rem 4fr 1fr 1fr 1rem;
+  }
+
+  .logo,
+  .social-media ul {
+    height: 6rem;
+  }
+
+  .logo h2 {
+    font-size: 2rem;
+  }
+
+  .social-media {
+    height: 6rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .social-media .hamburger-menu {
+    display: block;
+    font-size: 2.5rem;
+  }
+
+  /* hero section  */
+
+  .hero-section h1 {
+    font-size: 3.8rem;
+  }
+}
+
+/**/
